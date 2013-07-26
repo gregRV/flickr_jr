@@ -1,0 +1,38 @@
+.container {
+	background-color: #2B3547;
+	border-radius: 5px;
+  margin: 20px auto;
+  width: 850px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+th {
+  text-align: left;
+}
+
+img {
+	margin: 3px;
+	border-radius: 5px;
+}
+
+h1,h2,h3 {
+	color: white;
+	text-align: center;
+}
+
+form {
+	color: white;
+	text-align: center;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.nav a {
+	color: #2B3547;
+	margin: 0 10px;
+	font-size: 1.2em;
+}

@@ -1,0 +1,8 @@
+<h1>Hello, <%= @user.name %>!</h1>
+
+<h3><a href='/albums/new'>Create a New Album</a></h3>
+
+<h3>All Albums</h3>
+<% @user.albums.each do |album| %>
+	<a href="/albums/<%= album.id %>"><img src="<%= album.photos.first.file %>"></a>
+<% end %>

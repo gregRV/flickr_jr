@@ -1,0 +1,13 @@
+<h1>"<%= @album.name %>"</h1>
+
+<h3>Upload a Photo!</h3>
+<form action='/uploads' method="post" enctype='multipart/form-data'>
+	<input type='hidden' name="id" value="<%= @album.id %>">
+  <input type='file' name='myfile'><br>
+  <input type='submit' value='Upload'>
+</form>
+
+<h3>All Photos</h3>
+<% @album.photos.each do |photo| %>
+	<img src="<%= photo.file %>"/>
+<% end %>

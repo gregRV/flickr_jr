@@ -1,0 +1,11 @@
+/ %html
+/ 	%body
+/ 		%if @img
+/ 		%img.each do |i|
+/ 			%= i.file_name
+/ 		%end
+/ 		%h1 File uploader!
+/ 		%form(method="post" enctype='multipart/form-data' action='/uploads')
+/ 			%input(type='file' name='myfile')
+/ 			%br
+/ 			%input(type='submit' value='Upload')

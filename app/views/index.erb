@@ -1,0 +1,25 @@
+<% if logged_in? %>
+  <h2>Recent Photos</h2>
+  <% if @img %>
+    <% @img.each do |i| %>
+      <a href="/albums/<%= i.album_id %>"><img src="<%= i.file %>"/>
+    <% end %>
+  <% end %>
+
+<% else %>
+
+  <form action='/sessions' method='post'>
+    <input type='email' name='email' placeholder='Email' value="<%= @user.email %>"><br>
+    <input type='password' name='password' placeholder="Password"><br>
+    <input type='submit' value='Sign In'>
+  </form>
+
+  <br>
+
+  <form action='/users' method='post'>
+    <input type='text' name='user[name]' placeholder='Name'><br>
+    <input type='email' name='user[email]' placeholder='Email'><br>
+    <input type='password' name='user[password]' placeholder="Password"><br>
+    <input type='submit' value='Sign Up'>
+  </form>
+<% end %>
