@@ -2,7 +2,7 @@
 	background-color: #2B3547;
 	border-radius: 5px;
   margin: 20px auto;
-  width: 850px;
+  width: 900px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
@@ -13,6 +13,7 @@ th {
 
 img {
 	margin: 3px;
+	border: 3px solid white;
 	border-radius: 5px;
 }
 
@@ -24,6 +25,7 @@ h1,h2,h3 {
 form {
 	color: white;
 	text-align: center;
+	/*display: none;*/
 }
 
 a {

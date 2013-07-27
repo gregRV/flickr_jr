@@ -34,12 +34,12 @@ end
 
 ### PHOTOS
 post '/uploads' do
+	puts "::::::::::::::: #{params}"
+	# content_type :json
 	photo = current_user.albums.find(params['id']).photos.new
 	photo.file = params['myfile']
 	photo.save
-	# File.open('public/images/' + params['myfile'][:filename], 'w') do |f|
-	# 	f.write(params['myfile'][:tempfile].read)
-	# end
+	# {photo: photo}.to_json
 	redirect "albums/#{photo.album_id}"
 end
 
@@ -50,7 +50,8 @@ end
 
 post '/albums' do
 	album = current_user.albums.create(params[:album])
-	redirect "/albums/#{album.id}"
+	content_type :json
+	{album: album}.to_json
 end
 
 get '/albums/:id' do |id|

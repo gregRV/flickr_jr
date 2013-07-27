@@ -1,13 +1,17 @@
 <h1>"<%= @album.name %>"</h1>
 
-<h3>Upload a Photo!</h3>
-<form action='/uploads' method="post" enctype='multipart/form-data'>
-	<input type='hidden' name="id" value="<%= @album.id %>">
-  <input type='file' name='myfile'><br>
-  <input type='submit' value='Upload'>
-</form>
+<% if current_user.id == @album.user_id %>
+	<h3>Upload a Photo!</h3>
+	<form id='new-photo-form' action='/uploads' method="post" enctype='multipart/form-data'>
+		<input type='hidden' name="id" value="<%= @album.id %>">
+	  <input type='file' name='myfile'><br>
+	  <input type='submit' value='Upload'>
+	</form>
+<% else %>
+	<h3>By: <%= User.find(@album.user_id).name %></h3>
+<% end %>
 
 <h3>All Photos</h3>
 <% @album.photos.each do |photo| %>
-	<img src="<%= photo.file %>"/>
+	<img src="<%= photo.file %>">
 <% end %>

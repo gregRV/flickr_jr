@@ -1,8 +1,15 @@
 <h1>Hello, <%= @user.name %>!</h1>
 
-<h3><a href='/albums/new'>Create a New Album</a></h3>
+<!-- CREATE A NEW ALBUM -->
+<form action='/albums' method='post'>
+	<input type='text' name='album[name]' placeholder='Album Name'>
+	<input id='create-album' type='submit' value='Create Album'>
+</form>
 
+<!-- NEED VALIDATIONS TO ENSURE EMPTY ALBUMS/PHOTOS AREN'T UPLOADED-->
 <h3>All Albums</h3>
 <% @user.albums.each do |album| %>
-	<a href="/albums/<%= album.id %>"><img src="<%= album.photos.first.file %>"></a>
+	<li><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
 <% end %>
+
+
